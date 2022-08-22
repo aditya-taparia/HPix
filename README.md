@@ -1,1 +1,2 @@
-# Satellite-Image-to-Vector-Map
+# Satellite Image to Vector Map
+In this project I have build and train a conditional generative adversarial network (cGAN) called pix2pix that learns a mapping from input images to output images as described in its paper, [Image-to-Image Translation with Conditional Adversarial Networks](https://arxiv.org/abs/1611.07004). Pix2pix is not application specific - it can be applied to a wide range of tasks, but for this project I am using it solely for converting satellite image to vector map.
