@@ -1,4 +1,3 @@
-<style>body {text-align: justify}</style>
 # Satellite Image to Vector Map Translation with HPix Architecture
 In this project, I have build and train a novel conditional generative adversarial network (cGAN) called HPix that learns a mapping from input images to output images. This repository contains the implementaion, training and testing code for this network.
 
@@ -10,31 +9,31 @@ For preprocessing, we have resized the images to 256x256 pixels. Then we also ha
 ## Model
 This architecture comprises two GAN frameworks, one at global level and other at local level, together forming a hierarchical model, as shown in figure below.
 
-![HPix Architecture](images/HierarchicalPix%20Architecture.jpg)
+![HPix Architecture](./images/HierarchicalPix%20Architecture.jpg)
 
 ### Global Generator
 The global generator is an architecture with nested skip connections, inspired from Unet++ architecture. The following figure shows the architecture of global generator.
 
-![Global Generator](images/HierarchicalPix%20Global%20Generator.jpg)
+![Global Generator](./images/HierarchicalPix%20Global%20Generator.jpg)
 
 The following figure explains the components used in the global generator. They are architecture of - (a) Encoder, (b) Decoder, and (c) Transition Block. These components are also used in the local generator.
 
-![Global Components](images/Global%20Generator%20Components.jpg)
+![Global Components](./images/Global%20Generator%20Components.jpg)
 
 ### Local Generator
-The local generator of HPix is a modified architecture of Pix2Pix which takes two inputs, a generated output of the global generator and our original input (satellite image) and provide us a better output. We identified that the use of a local generator helped in repatching some of the artifacts formed by the global generator thus improving the output quality. The following figure shows the architecture of local generator.
+The local generator of HPix is a modified architecture of Pix2Pix which takes two inputs, a generated output of the global generator and our original input (satellite image) and gives single output. The following figure shows the architecture of local generator.
 
-![Local Generator](images/HierarchicalPix%20Local%20Generator.jpg)
+![Local Generator](./images/HierarchicalPix%20Local%20Generator.jpg)
 
 ### Local and Global Discriminator
 The local and global discriminator are similar to the PatchGAN discriminator used in Pix2Pix. The following figure shows the architecture of the discriminator.
 
-![Discriminator](images/HierarchicalPix%20Global%20Discriminator.jpg)
+![Discriminator](./images/HierarchicalPix%20Global%20Discriminator.jpg)
 
 The following figure displays the discriminator CNNBlock.
 
 <center>
-<img src="images/Global%20Discriminator%20Components.jpg" width="50%" height="50%"/>
+<img src="./images/Global%20Discriminator%20Components.jpg" width="50%" height="50%"/>
 </center>
 
 ## Training Conditions
@@ -43,7 +42,7 @@ The model was trained on Kaggle platform for 200 epochs. The model was optimized
 ## Results
 The following figure shows the comparision of our model with Pix2Pix and CycleGan on the test dataset.
 
-![Comparing with different architectures](images/comparison%20between%20different%20models.jpg)
+![Comparing with different architectures](./images/comparison%20between%20different%20models.jpg)
 
 ## Pretrained Weights
 The pretrained weights for this model can be downloaded from [here](https://www.kaggle.com/datasets/adityataparia/hpix-weights).
